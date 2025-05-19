@@ -12,24 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from collections.inline_array import InlineArray
-from random import randint
+from random import random_ui64
 
 
 fn nanoid[
     length: Int = 12
 ](
-    *,
     alphabet: String = "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 ) -> String:
     """
     Generate a random string of the given length using the given alphabet.
     """
-    inner = InlineArray[Int32, length](fill=0)
-    randint(inner.unsafe_ptr(), length, 0, len(alphabet) - 1)
+    low = 0
+    high = len(alphabet) - 1
     str = String(capacity=length)
 
     @parameter
     for i in range(length):
-        str += alphabet[inner[i]]
+        v = random_ui64(low, high)
+        str += alphabet[v]
+
     return str

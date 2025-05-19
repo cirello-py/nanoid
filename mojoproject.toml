@@ -1,11 +1,18 @@
 [project]
-authors = ["U. Cirello <ulderico.cirello@gmail.com>"]
+authors = ["Ulderico Cirello <ulderico.cirello@gmail.com>"]
+description = "Port of nanoid to Mojo"
 channels = ["https://conda.modular.com/max-nightly", "https://conda.modular.com/max", "https://repo.prefix.dev/modular-community", "conda-forge"]
 name = "nanoid"
-platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
+platforms = ["osx-arm64", "linux-aarch64", "linux-64"]
 version = "0.2.0"
+license-file = "LICENSE"
+homepage = "https://github.com/cirello-py/nanoid"
+repository = "https://github.com/cirello-py/nanoid"
 
 [tasks]
+build = { cmd = "mojo package nanoid -o nanoid.mojopkg" }
+test = { cmd = "mojo test" }
+
 
 [dependencies]
 max = "*"

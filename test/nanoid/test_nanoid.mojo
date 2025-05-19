@@ -12,4 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .nanoid import *
+from testing import *
+from nanoid import nanoid
+from random import seed
+
+
+def test_nanoid():
+    seed(0)
+    assert_equal("cv3WKwem0YwI", nanoid())
+    seed(0)
+    assert_equal("cv3WKwem0YwIEaC0CLccx", nanoid[length=21]())
+    seed(0)
+    assert_equal("261319339392", nanoid[length=12]("1234567890"))
