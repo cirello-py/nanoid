@@ -3,7 +3,7 @@ authors = ["U. Cirello <ulderico.cirello@gmail.com>"]
 channels = ["https://conda.modular.com/max-nightly", "https://conda.modular.com/max", "https://repo.prefix.dev/modular-community", "conda-forge"]
 name = "nanoid"
 platforms = ["osx-arm64"]
-version = "0.1.0"
+version = "0.2.0"
 
 [tasks]
 
