@@ -15,6 +15,7 @@
 from collections.inline_array import InlineArray
 from random import randint
 
+
 fn nanoid[
     length: Int = 12
 ](
@@ -27,6 +28,8 @@ fn nanoid[
     inner = InlineArray[Int32, length](fill=0)
     randint(inner.unsafe_ptr(), length, 0, len(alphabet) - 1)
     str = String(capacity=length)
+
+    @parameter
     for i in range(length):
         str += alphabet[inner[i]]
     return str
