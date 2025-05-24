@@ -35,7 +35,7 @@ print(id)
 Run the included test with:
 
 ```sh
-mojo test test_nanoid.mojo
+magic run test
 ```
 
 ## License
